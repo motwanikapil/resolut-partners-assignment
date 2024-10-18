@@ -15,3 +15,16 @@
 - #### `yarn start`
   or
 - #### `bun start`
+
+### make .env file in backend folder
+```
+PORT=
+DOMAIN=
+MONGODB_URL=
+JWT_SECRET_KEY=
+```
+
+### make .env file in frontend folder
+```
+VITE_BACKEND_URL=
+```
