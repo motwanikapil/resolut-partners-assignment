@@ -11,9 +11,9 @@ const postRoutes = require('./routes/post.routes')
 const imageRoutes = require('./routes/image.routes')
 const errorMiddleware = require('./middlewares/error.middleware')
 
-const { PORT, DOMAIN } = process.env
+const { PORT, DOMAIN, FRONTEND_URL } = process.env
 
-app.use(cors())
+app.use(cors({ origin: FRONTEND_URL }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))

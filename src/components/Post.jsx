@@ -3,6 +3,8 @@ import EditPost from './EditPost'
 import { useAuth } from '../contexts/AuthContext'
 import { usePost } from '../contexts/PostContext'
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+
 export default function Post({ post, refetch }) {
   const { title, image, description } = post
   const { isLoggedIn } = useAuth()
@@ -54,7 +56,7 @@ export default function Post({ post, refetch }) {
           </h1>
           <section className="flex items-center justify-center flex-col">
             <img
-              src={`http://localhost:4000/${image}`}
+              src={`${BACKEND_URL}/${image}`}
               alt="image"
               className="w-6/12 lg:w-9/12 rounded-lg object-cover py-3"
             />
