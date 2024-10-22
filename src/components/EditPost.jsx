@@ -6,6 +6,8 @@ import { useState } from 'react'
 import { usePost } from '../contexts/PostContext'
 import { toast } from 'react-toastify'
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+
 const schema = yup.object({
   title: yup.string().required('Title is required'),
   description: yup.string().required('Description is required'),
@@ -49,7 +51,7 @@ export default function EditPost({ post, setEditMode, refetch }) {
             <img
               src={
                 typeof image === 'string'
-                  ? `http://localhost:4000/${post.image}`
+                  ? `${BACKEND_URL}/${post.image}`
                   : URL.createObjectURL(image)
               }
               alt="post image"
